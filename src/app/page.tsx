@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Fragment } from "react";
+import heroBg from "../../public/assets/herobg.png";
 import {
   Hero,
   Navbar,
@@ -14,15 +15,19 @@ import {
   ComputersCanvas,
   StarsCanvas,
 } from "./components";
+import Computer from "./components/Computer";
 
 export default function Home() {
   return (
     <Fragment>
       <div className="relative z-0 bg-primary">
-        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+        <div
+          className={`bg-[url(/assets/herobg.png)]  bg-cover bg-no-repeat bg-center`}
+        >
           <Navbar />
           <Hero />
         </div>
+        <Computer />
         <About />
         <Tech />
         <Experience />
