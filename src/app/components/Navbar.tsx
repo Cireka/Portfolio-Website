@@ -22,7 +22,7 @@ const Navbar = () => {
             href={"/"}
           >
             <p className="text-white text-[18px] font-bold cursor-pointer">
-              Tsotne| ReactJs Developer
+              Tsotne | ReactJs Developer
             </p>
           </Link>
         </div>

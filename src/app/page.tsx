@@ -16,6 +16,7 @@ import {
   StarsCanvas,
 } from "./components";
 import Computer from "./components/Computer";
+import { ScrollButton } from "./components/ScrollButton";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
           <Hero />
         </div>
         <Computer />
+        <ScrollButton />
         <About />
         <Tech />
         <Experience />

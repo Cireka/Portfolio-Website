@@ -4,8 +4,30 @@ import CanvasLoader from "../Loader";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
+type mediaQueryType = {
+  matches: boolean;
+};
+
 const Computers = () => {
   const Computer = useGLTF("/desktop_pc/scene.gltf");
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 500px)");
+    setIsMobile(mediaQuery.matches);
+
+    const handleMediaQueryChange = (event: mediaQueryType) => {
+      setIsMobile(event.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
+  }, []);
+
   return (
     <mesh>
       <hemisphereLight groundColor="black" intensity={0.15} />
@@ -21,7 +43,7 @@ const Computers = () => {
       <primitive
         position={[0, -3, -1.5]}
         object={Computer.scene}
-        scale={0.8}
+        scale={isMobile ? 0.5 : 0.8}
         rotatiom={[-0.01, -0.2, -0.1]}
       />
     </mesh>
