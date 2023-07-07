@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { Fragment } from "react";
 import heroBg from "../../public/assets/herobg.png";
@@ -32,9 +33,9 @@ export default function Home() {
         <ScrollButton />
         <About />
         <Tech />
-        <Experience />
+        {/* <Experience /> */}
         <Works />
-        <Feedbacks />
+        {/* <Feedbacks /> */}
         <div className="z-0 relative">
           <Contact />
           <StarsCanvas />
