@@ -12,7 +12,7 @@ const About = () => {
           Overview
         </h1>
         <Image
-          className="opacity-65 rounded-xl"
+          className="opacity-35 rounded-xl"
           width={300}
           height={300}
           alt="Profile Picture"

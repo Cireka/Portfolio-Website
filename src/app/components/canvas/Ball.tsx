@@ -8,7 +8,6 @@ import CanvasLoader from "../Loader";
 import { DirectionalLight } from "three";
 
 const Ball = (props: any) => {
-  console.log(props.imgUrl);
   const decal = useTexture(props.imgUrl.src);
   return (
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
