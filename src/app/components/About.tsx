@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { SectionWrapper } from "../hoc";
 
 const About = () => {
   return (
@@ -34,4 +35,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default SectionWrapper(About, "About");

@@ -1,62 +1,62 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { navLinks } from "../Constants";
 import Link from "next/link";
 import { styles } from "../style";
+import { animateScroll as scroll } from "react-scroll";
 
 const Navbar = () => {
-  const [active, setActive] = useState("false");
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      if (scrollTop > 100) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav
-      className={`${styles.paddingX} w-full  flex items-center py-5 top-0 z-20 bg-transparent`}
+      className={`${
+        styles.paddingX
+      } w-full flex items-center py-5 fixed top-0 z-30 ${
+        scrolled ? "bg-primary" : "bg-transparent"
+      }`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <div className="flex w-full items-center">
-          <Link
+          <a
             onClick={() => {
-              setActive("");
               window.scrollTo(0, 0);
             }}
             className="flex items-center gap-2 "
-            href={"/"}
           >
             <p className="text-white text-[18px] font-bold cursor-pointer">
               Tsotne | ReactJs Developer
             </p>
-          </Link>
+          </a>
         </div>
         <div className="flex w-full items-center justify-end gap-[48px]">
-          <Link
-            onClick={() => {
-              setActive("");
-              window.scrollTo(0, 0);
-            }}
-            className="flex items-center gap-2 "
-            href={"/"}
-          >
-            <p className={styles.NavLinks}>Work</p>
-          </Link>
-          <Link
-            onClick={() => {
-              setActive("");
-              window.scrollTo(0, 0);
-            }}
-            className="flex items-center gap-2 "
-            href={"/"}
-          >
-            <p className={styles.NavLinks}>About</p>
-          </Link>
-          <Link
-            onClick={() => {
-              setActive("");
-              window.scrollTo(0, 0);
-            }}
-            className="flex items-center gap-2 "
-            href={"/"}
-          >
-            <p className={styles.NavLinks}>Contact</p>
-          </Link>
+          {navLinks.map((link) => {
+            return (
+              <a
+                key={link.id}
+                className="flex items-center gap-2 "
+                href={`#${link.id}`}
+              >
+                <p className={styles.NavLinks}>{link.title}</p>
+              </a>
+            );
+          })}
         </div>
       </div>
     </nav>

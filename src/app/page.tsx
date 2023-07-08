@@ -9,7 +9,6 @@ import {
   Tech,
   Experience,
   Works,
-  Feedbacks,
   Contact,
   EarthCanvas,
   BallCanvas,
@@ -35,7 +34,6 @@ export default function Home() {
         <Tech />
         {/* <Experience /> */}
         <Works />
-        {/* <Feedbacks /> */}
         <div className="z-0 relative">
           <Contact />
           <StarsCanvas />
