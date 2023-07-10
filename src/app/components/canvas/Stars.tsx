@@ -4,8 +4,13 @@ import { Points, PointMaterial, Preload, Sphere } from "@react-three/drei";
 import * as random from "maath/random/";
 
 const Stars = (props: any) => {
-  const ref = useRef(null);
+  const ref = useRef<any>(null);
   const sphere = random.inSphere(new Float32Array(5000), { radius: 1.2 });
+
+  useFrame((state, delta) => {
+    ref.current.rotation.x -= delta / 10;
+    ref.current.rotation.y -= delta / 15;
+  });
 
   return (
     <group rotation={[0, 0, Math.PI / 4]}>

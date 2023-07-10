@@ -15,10 +15,48 @@ const Contact = () => {
     email: "",
     message: "",
   });
-  const handleChange = (e: any) => {};
-  // const handleSubmit = (e) =>{
+  const templateKey: string = process.env.NEXT_PUBLIC_TEMPLATE_KEY!;
+  const publicKey: string = process.env.NEXT_PUBLIC_PUBLIC_KEY!;
+  const serviceKey: string = process.env.NEXT_PUBLIC_SERVICE_KEY!;
 
-  // }
+  const handleChange = (e: any) => {
+    const { name, value } = e.target;
+    setForm((prevState) => ({ ...prevState, [name]: value }));
+  };
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    setLoading(true);
+    emailjs
+      .send(
+        serviceKey,
+        templateKey,
+        {
+          from_name: form.name,
+          to_name: "Tsotne",
+          from_email: form.email,
+          to_email: "tsotne.tsirekidze11@gmail.com",
+          message: `${form.message} Sent By ${form.email}`,
+        },
+        publicKey
+      )
+      .then(
+        () => {
+          setLoading(false);
+          alert("Thank You. I will get back to you as soon as possible!");
+          setForm({
+            name: "",
+            email: "",
+            message: "",
+          });
+        },
+        (error) => {
+          setLoading(false);
+          console.log(error);
+          alert("Something Went Wrong...");
+        }
+      );
+  };
   return (
     <div className="xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden">
       <motion.div
@@ -27,7 +65,11 @@ const Contact = () => {
       >
         <p className={`${styles.sectionSubText}`}>Get in touch</p>
         <h3 className={`${styles.sectionHeadText}`}>Contact</h3>
-        <form className="mt-12 flex flex-col gap-8" ref={formRef}>
+        <form
+          onSubmit={handleSubmit}
+          className="mt-12 flex flex-col gap-8"
+          ref={formRef}
+        >
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Your Name</span>
             <input
@@ -40,7 +82,7 @@ const Contact = () => {
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Name</span>
+            <span className="text-white font-medium mb-4">Your Email</span>
             <input
               type="email"
               name="email"
