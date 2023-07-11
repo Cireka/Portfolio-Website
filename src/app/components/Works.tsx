@@ -15,6 +15,7 @@ type Props = {
   tags: { name: string; color: string }[];
   image: any;
   source_code_link: string;
+  live: string;
 };
 
 const ProjectCard = ({
@@ -24,9 +25,15 @@ const ProjectCard = ({
   tags,
   image,
   source_code_link,
+  live,
 }: Props) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div
+      onClick={() => {
+        window.open(live, "_blank");
+      }}
+      variants={fadeIn("up", "spring", index * 0.5, 0.75)}
+    >
       <Tilt
         className="bg-tertiary  cursor-pointer p-5 rounded-lg sm:w-[360px] w-full"
         options={{
@@ -44,7 +51,7 @@ const ProjectCard = ({
         </div>
         <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
           <div
-            className="black-gradient w-10 h-10 rounded-full flex items-center justify-center cursor-pointer"
+            className="black-gradient w-10 h-10 rounded-full flex items-center justify-center cursor-pointer z-30"
             onClick={() => {
               window.open(source_code_link, "_blank");
             }}

@@ -11,14 +11,14 @@ type mediaQueryType = {
 const Computers = () => {
   const Computer = useGLTF("/desktop_pc/scene.gltf");
 
-  const [isMobile, setIsMobile] = useState(false);
+  const [isSmallSCreen, setSmallScreen] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
-    setIsMobile(mediaQuery.matches);
+    const mediaQuery = window.matchMedia("(max-width: 1270px)");
+    setSmallScreen(mediaQuery.matches);
 
     const handleMediaQueryChange = (event: mediaQueryType) => {
-      setIsMobile(event.matches);
+      setSmallScreen(event.matches);
     };
 
     mediaQuery.addEventListener("change", handleMediaQueryChange);
@@ -41,9 +41,9 @@ const Computers = () => {
         shadow-mapSize={1024}
       />
       <primitive
-        position={[0, -3, -1.5]}
+        position={[0, -3, -1]}
         object={Computer.scene}
-        scale={isMobile ? 0.5 : 0.8}
+        scale={isSmallSCreen ? 0.6 : 0.8}
         rotatiom={[-0.01, -0.2, -0.1]}
       />
     </mesh>

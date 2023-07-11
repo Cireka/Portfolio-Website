@@ -8,7 +8,6 @@ import {
   html,
   css,
   reactjs,
-  redux,
   tailwind,
   nodejs,
   mongodb,
@@ -19,11 +18,10 @@ import {
   starbucks,
   tesla,
   shopify,
-  carrent,
-  jobit,
-  tripguide,
-  threejs,
   nextjs,
+  Coza,
+  Weather,
+  Natours,
 } from "../../public/assets";
 
 export const navLinks = [
@@ -191,67 +189,70 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Coza E-Commerce Store",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "An E-commerce website offering a wide range of products for online purchase, providing a seamless shopping experience.",
     tags: [
       {
-        name: "react",
+        name: "ReactJs",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "NextJs",
         color: "green-text-gradient",
       },
       {
-        name: "tailwind",
+        name: "Framer-Motion",
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: Coza,
+    source_code_link: "https://github.com/Cireka/Cosa-Store-Project",
+    live: "https://cosa-store-project-ve3g.vercel.app",
   },
   {
-    name: "Job IT",
+    name: "Compact Weather",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "A minimalistic weather forecast website with a clean interface for checking current weather conditions.",
     tags: [
       {
-        name: "react",
+        name: "ChartJs",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "Weather Api",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "NextJs",
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: Weather,
+    source_code_link: "https://github.com/Cireka/Compact-Weather",
+    live: "https://compact-weather-3ao1.vercel.app",
   },
   {
-    name: "Trip Guide",
+    name: "Natours",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "A full-stack tour booking website that allows users to explore and book various travel experiences.",
     tags: [
       {
-        name: "nextjs",
+        name: "Nextjs",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "NodeJs",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "RestApi",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: Natours,
+    source_code_link: "https://github.com/Cireka/Natours-Front-End",
+    live: "https://natours-front-end.vercel.app",
   },
 ];
 

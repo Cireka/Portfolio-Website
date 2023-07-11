@@ -10,9 +10,6 @@ import {
   Experience,
   Works,
   Contact,
-  EarthCanvas,
-  BallCanvas,
-  ComputersCanvas,
   StarsCanvas,
 } from "./components";
 import Computer from "./components/Computer";

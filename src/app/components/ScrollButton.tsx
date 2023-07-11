@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 export const ScrollButton = () => {
   return (
-    <div className="w-full flex justify-center absolute top-[860px]">
+    <div className="w-full flex justify-center absolute top-[870px] z-30">
       <a href="#About">
         <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
           <motion.div
