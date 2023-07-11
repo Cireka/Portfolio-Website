@@ -31,7 +31,7 @@ import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 import nextjs from "./nextjs.png";
 
-import Coza from "./Project Photos/Coza Store Project.png";
+import Coza from "./Project Photos/Coza Store.png";
 import Weather from "./Project Photos/Compact Weather Project.png";
 import Natours from "./Project Photos/Natours Project.png";
 
