@@ -34,49 +34,51 @@ const ProjectCard = ({
       }}
       variants={fadeIn("up", "spring", index * 0.5, 0.75)}
     >
-      <Tilt
-        className="bg-tertiary  cursor-pointer p-5 rounded-lg sm:w-[360px] w-full"
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-      >
-        <div className="relative w-full h-[230px]">
-          <Image
-            className="w-full h-full object-cover rounded-2xl"
-            alt="project Photo"
-            src={image}
-          />
-        </div>
-        <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-          <div
-            className="black-gradient w-10 h-10 rounded-full flex items-center justify-center cursor-pointer z-30"
-            onClick={() => {
-              window.open(source_code_link, "_blank");
-            }}
-          >
+      <div className="relative">
+        <Tilt
+          className="bg-tertiary  cursor-pointer p-5 rounded-lg sm:w-[360px] w-full"
+          options={{
+            max: 45,
+            scale: 1,
+            speed: 450,
+          }}
+        >
+          <div className=" w-full h-[230px]">
             <Image
-              src={github}
-              alt="Github Logo"
-              className="w1/2 h-1/2 object-contain"
+              className="w-full h-full object-cover rounded-2xl"
+              alt="project Photo"
+              src={image}
             />
           </div>
-        </div>
-        <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
-        </div>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {tags.map((item) => {
-            return (
-              <p key={item.name} className={`text-[14px] ${item.color}`}>
-                #{item.name}
-              </p>
-            );
-          })}
-        </div>
-      </Tilt>
+          <div className="absolute inset-0 flex justify-end m-3">
+            <div
+              className="black-gradient w-10 h-10 rounded-full flex items-center justify-center cursor-pointer z-30"
+              onClick={() => {
+                window.open(source_code_link, "_blank");
+              }}
+            >
+              <Image
+                src={github}
+                alt="Github Logo"
+                className="w1/2 h-1/2 object-contain"
+              />
+            </div>
+          </div>
+          <div className="mt-5">
+            <h3 className="text-white font-bold text-[24px]">{name}</h3>
+            <p className="mt-2 text-secondary text-[14px]">{description}</p>
+          </div>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {tags.map((item) => {
+              return (
+                <p key={item.name} className={`text-[14px] ${item.color}`}>
+                  #{item.name}
+                </p>
+              );
+            })}
+          </div>
+        </Tilt>
+      </div>
     </motion.div>
   );
 };
