@@ -252,7 +252,7 @@ const projects = [
     ],
     image: Natours,
     source_code_link: "https://github.com/Cireka/Natours-Front-End",
-    live: "https://natours-front-end.vercel.app",
+    live: "https://sunny-centaur-531270.netlify.app",
   },
 ];
 
