@@ -26,12 +26,12 @@ export default function Home() {
           <Hero />
         </div>
         <Computer />
-        {/* <ScrollButton /> */}
+        <ScrollButton />
         <About />
         <Tech />
         {/* <Experience /> */}
         <Works />
-        <div className="z-0 relative">
+        <div className="z-2 relative">
           <Contact />
           <StarsCanvas />
         </div>
