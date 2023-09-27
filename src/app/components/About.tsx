@@ -2,12 +2,12 @@ import Image from "next/image";
 import React from "react";
 import { SectionWrapper } from "../hoc";
 import { motion } from "framer-motion";
-import {textVariant } from "../utils/motion";
+import { textVariant } from "../utils/motion";
 
 const About = () => {
   return (
     <motion.div variants={textVariant()}>
-      <div className="mt-[82px] w-full max-w-7xl mx-auto">
+      <div className="mt-[232px] w-full max-w-7xl mx-auto">
         <div className="flex flex-col justify-start">
           <h2 className="sm:text-[18px] text-[14px] text-secondary uppercase tracking-wider">
             INTRODUCTION

@@ -26,7 +26,7 @@ export default function Home() {
           <Hero />
         </div>
         <Computer />
-        <ScrollButton />
+        {/* <ScrollButton /> */}
         <About />
         <Tech />
         {/* <Experience /> */}
