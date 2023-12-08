@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Tsotne Portfolio",
   openGraph: {
     title: "Tsotne Tsirekidze Portfolio",
+    description: "Tsotne Tsirekidze Portfolio",
+    url: "https://portfolio-website-sigma-two.vercel.app", 
+    type: "website",
   },
 };
 
@@ -21,7 +24,7 @@ export default function RootLayout({
       <head>
         <title>Tsotne Portfolio</title>
         <meta property="og:title" content="Tsotne Tsirekidze Portfolio" />
-        <meta property="og:description" content="Tsotne Tsirekidze Portfolio"/>
+        <meta property="og:description" content="Tsotne Tsirekidze Portfolio" />
       </head>
       <body>{children}</body>
     </html>
