@@ -21,6 +21,7 @@ export default function RootLayout({
       <head>
         <title>Tsotne Portfolio</title>
         <meta property="og:title" content="Tsotne Tsirekidze Portfolio" />
+        <meta property="og:description" content="Tsotne Tsirekidze Portfolio"
       </head>
       <body>{children}</body>
     </html>
